@@ -1,4 +1,3 @@
-require('./bootstrap');
 function variant1() {
     const variant1 = document.getElementById('variant1');
     const variant2 = document.getElementById('variant2');
