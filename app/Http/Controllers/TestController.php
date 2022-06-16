@@ -153,6 +153,34 @@ class TestController extends Controller
         $test->update($data);
         return redirect('test')->with('flash_message', 'test Updated!');  
     }
+    public function gettests(Request $request) {
+        try{
+            $data = test::all();
+            
+            return response()->json([
+                'ok' => true,
+                'data' => $data
+                // 'id' => $data->id,
+                // 'curse' => $data->curse,
+                // 'lesson' => $data->lesson,
+                // 'question' => $data->question,
+                // 'answer' => $data->answer,
+                // 'variant_1' => $data->variant_1,
+                // 'variant_2' => $data->variant_2,
+                // 'variant_3' => $data->variant_3,
+                // 'variant_4' => $data->variant_4,
+                // 'created_at' => $data->created_at,
+                // 'updated_at' => $data->updated_at
+            ]);
+
+        }catch(\Exception $e) {
+            return response()->json([
+                'ok' => false,
+                'msg' => $e->getMessage(),
+            ]);
+        }
+    }
+
  
    
     public function destroy($id)
