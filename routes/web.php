@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/products', ProductController::class);
 
 Route::resource('/contact', TestController::class);
 Route::resource("/test", TestController::class);
